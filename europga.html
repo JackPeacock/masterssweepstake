@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Ruck's Masters Sweepstake</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="picks.js"></script>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<script>
+	function kimonoCallback(data) {
+  		$(document).ready(function(){
+  			for(var i = 0; i < data["results"]["collection1"].length; i++) {
+  				var player = data["results"]["collection1"][i]["playername"];
+  				var score = data["results"]["collection1"][i]["score"];
+
+          if (!picks[player]) {
+
+            $("#results").append("<tr><td>"+(i+1)+"</td><td>"+player+"</td><td></td><td>"+score+"</td></tr>");
+
+          }
+          else {
+  				$("#results").append("<tr><td>"+(i+1)+"</td><td>"+player+"</td><td>"+picks[player]+"</td><td>"+score+"</td></tr>");
+
+          }
+  			}
+ 		});
+ 	}
+
+  $.ajax({
+    "url":"http://www.kimonolabs.com/api/cqpjju0y?apikey=39f3bf182a2bebddddb1b9c7346d4f35&callback=kimonoCallback",
+    "crossDomain":true,
+    "dataType":"jsonp"
+});
+</script>
+<div class="container">
+</head>
+
+<body>
+<h1>The Masters Sweepstake</h1>
+<p>Results for the NH Collection Open. Unsurprisingly, everyone who is playing the Masters was over in America. Chris Ruck's Hanson came 57th though.</p>
+<a href="index.html">Back to the Shell Houston Results</a><br><br>
+<table class="table table-striped table-bordered table-hover table-condensed", id="results">
+  <tr><th>Position</th><th>Player</th><th>Sweepstake</th><th>Score</th></tr>
+</table>
+</div>
+</body>
+
+</html>
