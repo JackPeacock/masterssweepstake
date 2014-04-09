@@ -15,11 +15,11 @@
 
           if (!picks[player]) {
 
-            $("#results").append("<tr><td>"+(i+1)+"</td><td>"+player+"</td><td></td><td>"+score+"</td></tr>");
+            $("#results").append("<tr><td>"+(i+1)+"</td><td>"+player+"</td><td></td><td></td><td>"+score+"</td></tr>");
 
           }
           else {
-  				$("#results").append("<tr><td>"+(i+1)+"</td><td>"+player+"</td><td>"+picks[player]+"</td><td>"+score+"</td></tr>");
+          $("#results").append("<tr><td>"+(i+1)+"</td><td>"+player+"</td><td>"+picks[player][0]+"</td><td>"+picks[player][1]+"</td><td>"+score+"</td></tr>");
 
           }
   			}
@@ -40,7 +40,7 @@
 <p>Results for the NH Collection Open. Unsurprisingly, everyone who is playing the Masters was over in America. Chris Ruck's Hanson came 57th though.</p>
 <a href="index.html">Back to the Shell Houston Results</a><br><br>
 <table class="table table-striped table-bordered table-hover table-condensed", id="results">
-  <tr><th>Position</th><th>Player</th><th>Sweepstake</th><th>Score</th></tr>
+  <tr><th>Position</th><th>Player</th><th>Sweepstake</th><th>Seed?</th><th>Score</th></tr>
 </table>
 </div>
 </body>
