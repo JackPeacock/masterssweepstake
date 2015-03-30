@@ -9,10 +9,9 @@
 <script>
 	function kimonoCallback(data) {
   		$(document).ready(function(){
-        var tableString = "table";
   			for(var i = 0; i < data["results"]["collection1"].length; i++) {
   				var player = data["results"]["collection1"][i]["player"];
-          var score = data["results"]["collection1"][i]["score"];
+          var score = data["results"]["collection1"][i]["odds"]["text"];
 
           if (!picks[player]) {
 
@@ -28,7 +27,7 @@
  	}
 
   $.ajax({
-    "url":"http://www.kimonolabs.com/api/dfywn0eo?apikey=39f3bf182a2bebddddb1b9c7346d4f35&callback=kimonoCallback",
+    "url":"http://www.kimonolabs.com/api/d26k0tw8?apikey=39f3bf182a2bebddddb1b9c7346d4f35&callback=kimonoCallback",
     "crossDomain":true,
     "dataType":"jsonp"
 });
@@ -38,10 +37,9 @@
 
 <body>
 <h1>The Masters Sweepstake</h1>
-<p>These are just the results from the Shell Houston Open</p>
-<a href="europga.html">Here are the results for the NH Collection Open</a><br><br>
+<p>The odds as provided by <a href="https://www.betfair.com/sport/golf">Betfair</a></p>
 <table class="table table-striped table-bordered table-hover table-condensed", id="results">
-  <tr><th>Position</th><th>Player</th><th>Sweepstake</th><th>Seed?</th><th>Score</th></tr>
+  <tr><th>Position</th><th>Player</th><th>Sweepstake</th><th>Seed?</th><th>Odds</th></tr>
 </table>
 </div>
 </body>

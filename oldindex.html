@@ -10,8 +10,8 @@
 	function kimonoCallback(data) {
   		$(document).ready(function(){
   			for(var i = 0; i < data["results"]["collection1"].length; i++) {
-  				var player = data["results"]["collection1"][i]["playername"];
-  				var score = data["results"]["collection1"][i]["score"];
+  				var player = data["results"]["collection1"][i]["player"];
+          var score = data["results"]["collection1"][i]["score"];
 
           if (!picks[player]) {
 
@@ -19,7 +19,7 @@
 
           }
           else {
-          $("#results").append("<tr><td>"+(i+1)+"</td><td>"+player+"</td><td>"+picks[player][0]+"</td><td>"+picks[player][1]+"</td><td>"+score+"</td></tr>");
+  				$("#results").append("<tr><td>"+(i+1)+"</td><td>"+player+"</td><td>"+picks[player][0]+"</td><td>"+picks[player][1]+"</td><td>"+score+"</td></tr>");
 
           }
   			}
@@ -27,7 +27,7 @@
  	}
 
   $.ajax({
-    "url":"http://www.kimonolabs.com/api/cqpjju0y?apikey=39f3bf182a2bebddddb1b9c7346d4f35&callback=kimonoCallback",
+    "url":"http://www.kimonolabs.com/api/dfywn0eo?apikey=39f3bf182a2bebddddb1b9c7346d4f35&callback=kimonoCallback",
     "crossDomain":true,
     "dataType":"jsonp"
 });
@@ -37,8 +37,8 @@
 
 <body>
 <h1>The Masters Sweepstake</h1>
-<p>Results for the NH Collection Open. Unsurprisingly, everyone who is playing the Masters was over in America. Chris Ruck's Hanson came 57th though.</p>
-<a href="index.html">Back to the Shell Houston Results</a><br><br>
+<p>These are just the results from the Shell Houston Open</p>
+<a href="europga.html">Here are the results for the NH Collection Open</a><br><br>
 <table class="table table-striped table-bordered table-hover table-condensed", id="results">
   <tr><th>Position</th><th>Player</th><th>Sweepstake</th><th>Seed?</th><th>Score</th></tr>
 </table>
